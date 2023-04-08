@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<template name="cartItem">
+  <view class="placeOrder_cart_buyBtn placeOrder_cart" style="display: {{open == 1 ? 'fixed' : 'none'}};bottom:{{cartlistOpen == 1 ? '0':'118rpx'}}">
+    <view class="block1" bindtap="showCartlist">
+      <view class="buyTips1">
+        <span class="iconfont icon-gouwuche buyBtnImg" style="font-size: 25px;"></span>
+      </view>
+      <view class="buyTips2">{{Totalquantity}}</view>
+      <view class="buyTips">
+        <span>￥ {{Totalamount}}</span>
+      </view>
+    </view>
+    <view class="block2" data-url="../orderpay/index" bindtap="JumpTo">去结算</view>
+  </view> 
+</template>
+

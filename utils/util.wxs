@@ -1,0 +1,11 @@
+var defineIndexOf = function(str, val){
+  return str.indexOf(val);
+}
+var config = function (){
+   return 'http://192.168.1.3:8000/' //换上你的地址
+}
+
+module.exports = {
+  config:config,
+  defineIndexOf:defineIndexOf,
+}

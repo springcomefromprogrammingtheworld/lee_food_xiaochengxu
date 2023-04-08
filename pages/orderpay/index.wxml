@@ -1,0 +1,79 @@
+<wxs src="../../utils/util.wxs" module="util" />
+<!-- 加载地址 -->
+<import src="../address/index" />
+<template is="addressItem" data="{{openAddress:openAddress,addressData:addressData}}"></template>
+<!-- 填写地址信息 -->
+<import src="../addressInfo/index" />
+<template is="addressItem" data="{{opencity:opencity,placeinfo:placeinfo,personal:personal,phone:phone,detailed:detailed}}"></template>
+<!-- 选择省市区信息 -->
+<import src="../selectInfo/index" />
+<template is="selectItem" data="{{cityproper:cityproper,provinces:provinces,province:province,citys:citys,city:city,countys:countys,area:area,cityselectnext:cityselectnext,cityselectprev:cityselectprev,provincenav:provincenav,citynav:citynav,areanav:areanav}}"></template>
+<!--index.wxml-->
+<view class="placeOrder_product" style="padding-bottom: 0px;">
+  <view class="jz_scrollbar fk_product_category_productContent">
+    <view class="jz_scrollbar__wrap">
+      <view class="jz_scrollbar__resize">
+        <view class="jz_scrollbar__view">
+          <view class="fk_product_category_productContent_wrap" style="padding-top: 0px;">
+            <view class="category">
+              <view class="categoryNames">商品明细</view>
+            </view>
+            <view class="category-item">
+              <view class="selfmention" bindtap="selfmentionHandle">
+                <span class="iconfont {{menticon == -1 ? 'icon-xuanze' : 'icon-xuanze1'}} selfmention-icon"></span>
+                <span class="selfmention-title">自提</span>
+              </view>
+              <view class="takeout" bindtap="takeoutHandle">
+                <span class="iconfont {{takeicon == -1 ? 'icon-xuanze' : 'icon-xuanze1'}} takeout-icon"></span>
+                <span class="takeout-title">外卖</span>
+              </view>
+            </view>
+            <view class="address-info" style="display: {{takeicon == 1 ? 'block' : 'none'}};">
+              <view>{{small_address}}</view>
+              <view>{{small_contract}} {{small_tel}}</view>
+            </view>
+            <view class="categoryBlock cartHeight">
+              <scroll-view scroll-y="true" style="max-height: 500rpx" scroll-with-animation="true" refresher-enabled="true" enhanced="true">
+                <block wx:for="{{orderpayData}}" wx:key="index">
+                  <view class="productItem">
+                    <view class="productPic productCart_img">
+                      <image src="{{util.config() + 'smallmall/' + item.small_product_img}}" class="productImg"></image>
+                    </view>
+                    <view class="productProp" style="width: 60%;">
+                      <view class="prop1">
+                        {{item.small_product_name}}
+                        <block wx:if="{{item.attr_object !== ''}}">
+                          <view style="color: #6e6c6c;font-size: 10px;">
+                            <block wx:for="{{item.attr_object}}" wx:key="index" wx:for-index="i_index" wx:for-item="value">
+                              <span style="margin-right: 5px;">{{value.small_attrvalue}}</span>
+                            </block>
+                          </view>
+                        </block>
+                      </view>
+                    </view>
+                    <view class="prop2">
+                      <view class="price">￥ {{item.retail_price}}</view>
+                      <view class="quantity">x {{item.small_count}}</view>
+                    </view>
+                  </view>
+                </block>
+              </scroll-view>
+            </view>
+            <view class="category" style="border-bottom: none;">
+              <view class="categoryNames" style="text-align: left;">商品小计</view>
+              <view class="subtotal">￥ {{Totalamount}}</view>
+            </view>
+            <view class="cartcommonbtn">
+              <view class="total">
+                <span class="total-title">合计</span>
+                <span class="total-price">￥ {{Totalamount}}</span>
+              </view>
+              <view class="cartbtn" bindtap="wechat">支付</view>
+            </view>
+          </view>  
+        </view>
+      </view>
+    </view>
+  </view>  
+</view>
+

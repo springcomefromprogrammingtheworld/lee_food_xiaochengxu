@@ -1,0 +1,183 @@
+/* 选择属性 */
+.placeOrder_choice_mask{
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0,0,0,0.5); 
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1005;
+}
+.placeOrder_choice_content{
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  background-color: #fff;
+  width: 100%;
+  max-height: 80%;
+  z-index: 1006;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+.placeOrder_choice_content .fk_product_category_productContent_wrap {
+  padding-top: 8px;
+}
+.placeOrder_choice_content .categoryBlock {
+  margin-bottom: 20px;
+}
+.placeOrder_choice_content .categoryName {
+  color: #333;
+  font-size: 16px;
+  margin: 13px 13px 0 13px;
+}
+.placeOrder_choice_content .productItem {
+  background-color: #fff;
+  margin: 8px;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+.placeOrder_choice_content .productItem .productPic {
+  height: 92px;
+  width: 92px;
+  display: inline-block;
+  line-height: 90px;
+  text-align: center;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  overflow: hidden;
+  position: relative;
+}
+.placeOrder_choice_content .productItem .productPic .productImg {
+  width: 100%;
+  height: 100%;
+}
+.placeOrder_choice_content .productItem .productProp {
+  width: 57%;
+  display: inline-block;
+  margin-left: 9px;
+  vertical-align: top;
+  margin-left: 0;
+  -webkit-box-sizing: border-box;
+  padding-right: 0;
+  padding-bottom: 0;
+  position: relative;
+  box-sizing: border-box;
+  height: 92px;
+}
+.placeOrder_choice_content .productItem .productProp .prop1 {
+  color: #353535;
+  font-size: 14px;
+  overflow: hidden;
+  padding-left: 9px;
+  padding-top: 2px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+.placeOrder_choice_content .commonbtnSVG{
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-size: 30px;
+  color: #6e6d6d;
+}
+.placeOrder_choice_content .jz_scrollbar {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+.placeOrder_choice_content .jz_scrollbar__wrap {
+  position: relative;
+  height: 100%;
+  overflow: scroll;
+}
+.placeOrder_choice_content .jz_scrollbar__resize {
+  position: relative;
+}
+.placeOrder_choice_content .jz_scrollbar__view {
+  position: relative;
+  border: none;
+}
+.placeOrder_choice_content .jz_scrollbar__view::-webkit-scrollbar {/*滚动条整体样式*/
+  width: 1px;     /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+}
+.placeOrder_choice_content .jz_scrollbar__view::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px hsla(0, 8%, 95%, 0.87);
+  background: #faf6f6;
+}
+.placeOrder_choice_content .jz_scrollbar__view::-webkit-scrollbar-track {/*滚动条里面轨道*/
+  -webkit-box-shadow: inset 0 0 5px rgba(240, 238, 238, 0.2);
+  border-radius: 10px;
+  background: #f8f5f5;
+}
+.placeOrder_choice_content .product_category_Item{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: distribute;
+  justify-content: flex-start;
+  flex-wrap:wrap;
+  margin: 13px 13px 40px 13px;
+}
+.placeOrder_choice_content .product_category_Item .category{
+  cursor: pointer;
+  padding: 5px 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  height: 25px;
+  line-height: 25px;
+  border: 1px solid #e2e2e2;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.placeOrder_choice_content .product_category_Item .category-active{
+  color: #FFF;
+  background: #56bb37;
+}
+.placeOrder_choice_content .cartcommonbtn{
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  z-index: 6;
+  background-color: #FFF;
+  width: 100%;
+  height: 55px;
+  -moz-box-shadow:inset 0px 15px 10px -15px #b1afaf; /*firefox*/
+  -webkit-box-shadow:inset 0px 15px 10px -15px #b1afaf; /*webkit*/
+  box-shadow:inset 0px 15px 10px -15px #b1afaf; /*opera或ie9*/
+}
+.placeOrder_choice_content .cartcommonbtn .cartbtn{
+  color: #FFF;
+  background: #56bb37;
+  width: 80%;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 35px;
+  border: 1px solid #56bb37;
+  margin: 10px auto;
+  cursor: pointer;
+}
+.placeOrder_choice_content .cartHeight{
+  position: relative;
+  max-height: 80%;
+  overflow: scroll;
+}

@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/index",
+    "pages/mydata/index",
+    "pages/order/index",
+    "pages/orderpay/index",
+    "pages/login/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "tabBar",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#979795",
+    "selectedColor": "#1c1c1b",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "点单"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

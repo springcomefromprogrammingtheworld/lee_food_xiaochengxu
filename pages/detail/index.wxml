@@ -1,0 +1,77 @@
+<template name="detailitem">
+  <view class="productDetailwrapper" style="display: {{detailOpen == 1 ? 'block' : 'none'}};">
+    <view class="productDetailPage productDetail editStatus">
+      <view class="jz_scrollbar moduleType moduleLayer">
+        <view class="jz_scrollbar__wrap" style="margin-right: -6px; margin-bottom: -6px; height: calc(100% + 6px);">
+          <view class="jz_scrollbar__resize">
+            <view class="jz_scrollbar__view">
+              <view class="proImgSwipe f_proImgSwipe" style="height: 375px;">
+                <view class="proDetailImgBox">
+                  <view class="swipImgBox">
+                    <view class="proDetailImg proDetailImgScale" style="background-image: url({{detailImg}}); width: 100%; height: 375px;"></view>
+                  </view>
+                </view>
+              </view>
+              <view class="nameAndPrice">
+                <view class="mallProductWrap">
+                  <view class="productNameText">{{detailData.small_product_name}}</view>
+                </view>
+                <view class="productPrice">
+                  <view class="productInfoContainer">
+                    <view class="imPriceBox">
+                      <span class="mallPrice g_stree6">￥{{detailData.retail_price}}</span>
+                      <!-- <span class="cancelPrice">￥30.00</span> -->
+                      <block wx:if="{{detailData.attr_group.length > 0}}">
+                        <span class="choice g_stree6" style="display: {{detailData.small_count > 0 ? 'block' : 'none'}}">{{detailData.small_count}}</span>
+                        <span class="marketingBtn g_stree6" data-index="{{detailindex}}" data-cgindex="{{detailcgindex}}" bindtap="marketingBtn">选择</span>
+                      </block>
+                      <block wx:else>
+                        <view class="commonbtnSVG">
+                          <span class="iconfont icon-jianhao g_stree6" style="font-size: 25px;display: {{detailData.small_count > 0 ? 'initial' : 'none'}}" data-index="{{detailindex}}" data-cgindex="{{detailcgindex}}" data-id="{{detailData.smallproductid}}" data-type="2" bindtap="reduce"></span>
+                          <span class="commonbtnSVG-title g_stree6" style="display: {{detailData.small_count > 0 ? 'initial' : 'none'}}">{{detailData.small_count}}</span>
+                          <span class="iconfont icon-jiahao2fill g_stree6" style="font-size: 25px;" data-index="{{detailindex}}" data-cgindex="{{detailcgindex}}" data-id="{{detailData.smallproductid}}" data-type="2" bindtap="addto"></span>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view class="separatorLine"></view>
+              <view class="productDetailTabPanel">
+                <ul class="tabUl" style="margin-left: 0px; width: 100%;">
+                  <li class="tabLi j_tabli1" style="width: 50%;">
+                    <span class="liSpan g_border6 tabActive">图文详情</span>
+                  </li>
+                  <li class="tabLi j_tabli2" style="width: 50%;">
+                    <span class="liSpan g_border6">商品参数</span>
+                  </li>
+                </ul>
+                <view class="tabBody">
+                  <view id="tabPanel1" class="tabPanel" style="display: block;">
+                    <view></view>
+                  </view>
+                  <view id="tabPanel2" class="tabPanel paramPanel" style="display: none;">
+                    <view class="paramList">
+                      <view class="paramItem">
+                        <view class="title">类型</view>
+                        <view class="content">散发着阳光沙滩的度假气息</view>
+                      </view>
+                      <view class="paramItem">
+                        <view class="title">市场价</view>
+                        <view class="content">￥30.0</view>
+                      </view>
+                      <view class="paramItem">
+                        <view class="title">价格</view>
+                        <view class="content">￥15.0</view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

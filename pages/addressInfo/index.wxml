@@ -1,0 +1,36 @@
+<!--pages/address/index.wxml-->
+<template name="addressItem">
+  <view class="aui-scrollView" style="display: {{opencity == 1 ? 'block' : 'none'}};">
+    <view class="aui-address-box">
+      <view class="aui-address-cell-item">
+        <view class="aui-cell-name">收货人</view>
+        <view class="aui-cell-input">
+          <input type="text" data-name="personal" value="{{personal}}" class="cell-input" placeholder="请输入您的姓名" autocomplete="off" bindinput="bindKeyInput" />
+        </view>
+        <span class="iconfont icon-shanchu2 icon-close" bindtap="addressCloseHandle"></span>
+      </view>
+      <view class="aui-address-cell-item">
+        <view class="aui-cell-name">手机号</view>
+        <view class="aui-cell-input">
+          <input type="number" data-name="phone" value="{{phone}}" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" maxlength="11" class="cell-input" placeholder="请输入手机号" autocomplete="off" bindinput="bindKeyInput" />
+        </view>
+      </view>
+      <view class="aui-address-cell-item">
+        <view class="aui-cell-name">所在地区</view>
+        <view class="aui-cell-input cell-input-text" bindtap="placehandle">
+          <input type="text" class="cell-input" readonly="" value="{{placeinfo}}" id="J_Address" placeholder="请选择收货地址" />
+          <span class="iconfont icon-sanjiao3"></span>
+        </view>
+      </view>
+      <view class="aui-address-cell-item">
+        <view class="aui-cell-name">详细地址</view>
+        <view class="aui-cell-input">
+          <input type="text" data-name="detailed" value="{{detailed}}" class="cell-input" placeholder="请输入详细地址" autocomplete="off" bindinput="bindKeyInput" />
+        </view>
+      </view>
+      <view class="aui-btn">
+        <view class="aui-submit" bindtap="submitToHandle">提交</view>
+      </view>
+    </view>
+  </view>
+</template>

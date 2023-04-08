@@ -1,0 +1,220 @@
+/**index.wxss**/
+@import "../../lib/font/iconfont.wxss";
+@import "../address/index.wxss";
+.wrapper {
+  height: -webkit-calc(100% - 50px);
+  height: calc(100% - 50px);
+  position: relative;
+  background: #f4f4f4;
+  width: 100%;
+  overflow: hidden;
+}
+.nav-active {
+  height: -webkit-calc(100% - 100px);
+  height: calc(100% - 100px);
+}
+.memberCenterContainer {
+  height: 100%;
+  margin-right: -10px;
+}
+.jz_scrollbar {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+.jz_scrollbar__wrap {
+  position: relative;
+  height: 100%;
+  overflow: scroll;
+}
+.jz_scrollbar__resize {
+  position: relative;
+}
+.jz_scrollbar__view {
+  position: relative;
+}
+.moduleType {
+  display: block;
+  position: relative;
+}
+.memberCenterContainer .moduleType {
+  margin-right: 10px;
+}
+.bg_block6 {
+  background-size: cover;
+}
+.memberCenterContainer .memberBasicInfo {
+  width: 100%;
+  position: relative;
+  color: #fff;
+  background-size: cover;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 20px;
+  height: 130px;
+}
+.memberCenterContainer .basicStyle0 {
+  height: 130px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 20px;
+}
+.memberCenterContainer .basicStyle2, .memberCenterContainer .memberBasicInfo .icon-pnameIcon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.memberCenterContainer .memberBasicInfo .icon-pnameIcon {
+  width: 60px;
+  height: 60px;
+  background: hsla(0,0%,100%,.4);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.memberCenterContainer .memberBasicInfo .icon-pnameIcon .headPic {
+  width: 56px;
+  height: 56px;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.memberCenterContainer .basicStyle0 .pdNameText {
+  padding-left: 13px;
+}
+.memberCenterContainer .memberName {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.memberLevelCon {
+  padding: 0 4px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  background: #ffe7d2;
+  font-size: 12px;
+  color: #ae816e;
+  margin-top: 4px;
+}
+.memberCenterContainer .memberAssets, .memberLevelCon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.memberCenterContainer .memberLevel {
+  margin-right: 4px;
+  font-size: 12px;
+  background: #fff6f2;
+  width: 15px;
+  height: 15px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-shadow: 0 0 6px 0 rgb(135 83 61 / 30%);
+  box-shadow: 0 0 6px 0 rgb(135 83 61 / 30%);
+}
+.memberCenterContainer .moduleAloneSVG {
+  color: #ae816e;
+}
+.memberCenterContainer .modifyArea {
+  background-color: #fff;
+}
+.memberCenterContainer .menuBox {
+  background: #f4f4f4;
+  padding:10px;
+  color: #3d3d3d;
+}
+.memberCenterContainer .showBlock {
+  padding: 20px 8px 0 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  background: #fff;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  width: -webkit-calc(100% - 16px);
+  width: calc(100% - 16px);
+}
+.memberCenterContainer .showBlock .itemCon {
+  padding-bottom: 20px;
+  width: 50%;
+}
+.memberCenterContainer .showBlock .itemCon, .memberCenterContainer .showBlock .itemName {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.memberCenterContainer .showBlock .itemName {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 100%;
+}
+.memberCenterContainer .modifyArea .itemName {
+  overflow: hidden;
+  float: left;
+  color: #3a3a3a;
+  font-size: 14px;
+}
+
+

@@ -1,0 +1,74 @@
+<!-- index.wxml -->
+<!-- 加载地址 -->
+<import src="../address/index" />
+<template is="addressItem" data="{{openAddress:openAddress,addressData:addressData}}"></template>
+<!-- 填写地址信息 -->
+<import src="../addressInfo/index" />
+<template is="addressItem" data="{{opencity:opencity,placeinfo:placeinfo,personal:personal,phone:phone,detailed:detailed}}"></template>
+<!-- 选择省市区信息 -->
+<import src="../selectInfo/index" />
+<template is="selectItem" data="{{cityproper:cityproper,provinces:provinces,province:province,citys:citys,city:city,countys:countys,area:area,cityselectnext:cityselectnext,cityselectprev:cityselectprev,provincenav:provincenav,citynav:citynav,areanav:areanav}}"></template>
+
+<view class="wrapper nav-active">
+  <view class="memberCenterContainer">
+    <view class="jz_scrollbar">
+      <view class="jz_scrollbar__wrap"style="height: calc(100% + 6px);">
+        <view class="jz_scrollbar__resize">
+          <view class="jz_scrollbar__view">
+            <view class="memberBasicInfoModule moduleType moduleLayer editStatus">
+              <view class="bg_block6" style="background-image: url({{module0}});">
+                <view class="memberBasicInfo basicStyle0">
+                  <view class="icon-pnameIcon">
+                    <image src="{{avatar_url != '' ? avatar_url : module1}}" class="headPic"></image>
+                  </view>
+                  <view class="pdNameText">
+                    <view class="memberName" style="color: rgb(255, 255, 255);">
+                      <span>{{nickname}}</span>
+                    </view>
+                    <view class="memberLevelCon">
+                      <view class="memberLevel">
+                        <span class="iconfont icon-vip1 moduleAloneSVG" style="font-size: 15px;"></span>
+                      </view>
+                      普通会员 
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="modifyArea">
+              <view class="menuModule moduleType moduleLayer menuBox">
+                <view class="showBlock">
+                  <view class="itemCon" data-url="" bindtap="JumpTo">
+                    <view class="itemName">
+                      <span class="iconfont icon-qian" style="font-size: 25px;"></span>
+                      <view class="memberCenterText"> 我的余额 </view>
+                    </view>
+                  </view>
+                  <view class="itemCon" data-url="" bindtap="JumpTo">
+                    <view class="itemName">
+                      <span class="iconfont icon-vip" style="font-size: 25px;"></span>
+                      <view class="memberCenterText"> 我的会员卡 </view>
+                    </view>
+                  </view>
+                  <view class="itemCon" data-url="../order/index" bindtap="JumpTo">
+                    <view class="itemName">
+                      <span class="iconfont icon-dingdan" style="font-size: 25px;"></span>
+                      <view class="memberCenterText"> 我的订单 </view>
+                    </view>
+                  </view>
+                  <view class="itemCon" bindtap="addressHandle">
+                    <view class="itemName">
+                      <span class="iconfont icon-shouhuodizhi" style="font-size: 25px;"></span>
+                      <view class="memberCenterText"> 收货地址 </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<tabbar tabbar="{{tabbar}}"></tabbar>

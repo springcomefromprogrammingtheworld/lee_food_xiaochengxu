@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<template name="cartlistItem">
+  <wxs src="../../utils/util.wxs" module="util" />
+  <view class="placeOrder_cart_list" style="display: {{open == 1 ? 'block' : 'none'}};">
+    <view class="placeOrder_cart_mask" bindtap="closeCartlist"></view>
+    <view class="placeOrder_cart_content">
+      <view class="placeOrder_productCategory" style="padding-bottom: 0px;">
+        <view class="jz_scrollbar">
+          <view class="jz_scrollbar__wrap">
+            <view class="jz_scrollbar__resize">
+              <view class="jz_scrollbar__view">
+                <view class="fk_product_category_productContent_wrap" style="padding-top: 0px;">
+                  <view class="category">
+                    <view class="categoryNames">已选商品</view>
+                    <view class="emptyCart" bindtap="emptyCart">清空购物车</view>
+                  </view>
+                  <view class="categoryBlock cartHeight">
+                    <block wx:for="{{cartdata}}" wx:key="index">
+                      <view class="productItem">
+                        <view class="productPic productCart productCart_img">
+                          <image src="{{util.config() + 'smallmall/' + item.small_product_img}}" class="productImg"></image>
+                        </view>
+                        <view class="productProp productCart g_stree6" style="width: 75%;">
+                          <view class="prop1">
+                            {{item.small_product_name}}
+                            <block wx:if="{{item.attr_object !== ''}}">
+                              <view style="color: #6e6c6c;font-size: 10px;">
+                                <block wx:for="{{item.attr_object}}" wx:key="index" wx:for-index="i_index" wx:for-item="value">
+                                  <span style="margin-right: 5px;">{{value.small_attrvalue}}</span>
+                                </block>
+                              </view>
+                            </block>
+                          </view>
+                          <view class="prop2">
+                            <span class="priceinfo_wrap">
+                              <span class="price">￥ {{item.retail_price}}</span>
+                            </span>
+                            <view class="commonbtnSVG">
+                              <span class="iconfont icon-jianhao" style="font-size: 25px;" data-index="{{index}}" data-cartid="{{item.small_cartid}}" data-id="{{item.smallproductid}}" bindtap="cartReduce"></span>
+                              <span class="commonbtnSVG-title">{{item.small_count}}</span>
+                              <span class="iconfont icon-jiahao2fill" style="font-size: 25px;" data-index="{{index}}" data-cartid="{{item.small_cartid}}" data-id="{{item.smallproductid}}" bindtap="cartAddto"></span>
+                            </view>
+                          </view>
+                        </view>
+                      </view>
+                      <view class="cartBr"></view>
+                    </block>
+                  </view>
+                </view>  
+              </view>
+            </view>
+          </view>
+        </view>  
+      </view>
+    </view>
+  </view>
+</template>
+

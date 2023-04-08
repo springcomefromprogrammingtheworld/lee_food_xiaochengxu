@@ -1,0 +1,140 @@
+<wxs src="../../utils/util.wxs" module="util" />
+<!-- 选择属性模板文件 -->
+<import src="../choice/index.wxml"/>
+<template is="choiceItem" data="{{choicedata:choicedata,choiceindex:choiceindex,attribute:attribute,open:choiceopen}}" />
+
+<!-- s购物车 --> 
+<import src="../cart/index.wxml"/>
+<template is="cartItem" data="{{open:cartOpen,cartlistOpen:cartlistOpen,Totalquantity:Totalquantity,Totalamount:Totalamount}}" />
+<!-- e购物车 -->
+
+<!-- s购物车列表 -->
+<import src="../cartlist/index.wxml"/>
+<template is="cartlistItem" data="{{open:cartlistOpen,cartdata:cartdata}}" />
+<!-- e购物车列表 -->
+
+<!-- 商品详情 -->
+<import src="../detail/index.wxml"/>
+<template is="detailitem" data="{{detailOpen:detailOpen,detailData:detailData,detailImg:detailImg,detailindex:detailindex,detailcgindex:detailcgindex}}"></template>
+<!-- 商品详情底部购物车 -->
+<import src="../cartnav/index.wxml"/>
+<template is="cartnavItem" data="{{detailCartOpen:detailCartOpen,Totalquantity:Totalquantity}}"></template>
+<!--index.wxml-->
+<view class="wrapper nav-active">
+  <view class="takeoutTemplatePage">
+    <view class="module-container">
+      <view class="takeoutTemplate takeoutTemplateModule" style="display: flex; flex-direction: column; justify-content: stretch;">
+        <view class="jz_scrollbar fk_takeoutTemplateContent">
+          <view class="jz_scrollbar__wrap" style="height: calc(100% + 6px);">
+            <view class="jz_scrollbar__resize">
+              <view class="jz_scrollbar__view">
+                <view class="header J_header">
+                  <view class="mallOverview mallOverviewModule moduleType moduleLayer J_mallOverview">
+                    <view class="headPic" style="background: url({{module0}}) center center / cover no-repeat;opacity: 1;"></view>
+                    <view class="headPic" style="background-color: rgb(0, 0, 0); opacity: 0.3;"></view>
+                    <view class="content">
+                      <view class="introduce">
+                        <view class="name">我的小店</view>
+                        <pre class="desc">健康食品，食出健康！我们用心做，你吃得更放心！</pre>
+                        <image src="{{module1}}" class="img" />
+                      </view>
+                      <view class="announcement">
+                        <view style="display: flex; align-items: center;">
+                          <span class="title">公告：</span>
+                          <span class="text" style="white-space: nowrap;">欢迎光临，用餐高峰期请提前下单，谢谢</span>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view class="content J_content">
+                <view class="placeOrder placeOrderModule moduleType moduleLayer J_placeOrder">
+                  <view class="jz_scrollbar">
+                    <view class="jz_scrollbar__wrap" style="margin-right: -6px; margin-bottom: -6px; height: calc(100% + 6px);">
+                      <view class="jz_scrollbar__resize">
+                        <view class="jz_scrollbar__view">
+                          <view class="placeOrder_productCategory pdCategoryModuleFlex J_categoryModule moduleType moduleLayer">
+                            <view class="categoryListStyle_place">
+                              <view class="categoryListStyle">
+                                <view class="jz_scrollbar">
+                                  <view class="jz_scrollbar__wrap">
+                                    <view class="jz_scrollbar__resize">
+                                      <view class="jz_scrollbar__view">
+                                        <block wx:for="{{categoryData}}" wx:key="index">
+                                          <view class="categoryTab {{categoryType == index ? 'selected g_stree6':''}}" data-value="{{index}}" data-title="{{item.name}}" bindtap="pointclick">
+                                            <span class="tagText">{{item.name}}</span>
+                                          </view>
+                                        </block>
+                                      </view>
+                                    </view>
+                                  </view>
+                                </view>
+                              </view>
+                            </view>
+                            <view class="module_bgContent_wrapper fk_product_category_content">
+                              <view class="module_bg" style="background-color: rgb(255, 255, 255);"></view>
+                              <view class="fixedCategoryName" data-defaultbg="true">{{categoryTitle}}</view>
+                              <view class="jz_scrollbar fk_product_category_productContent">
+                                <view class="jz_scrollbar__wrap">
+                                  <view class="jz_scrollbar__resize">
+                                    <view class="jz_scrollbar__view">
+                                      <view class="fk_product_category_productContent_wrap">
+                                        <scroll-view scroll-y="true" style="height: 100vh" bindscroll="scroll" scroll-with-animation="true" refresher-enabled="true" enhanced="true" scroll-into-view="{{rowView}}" scroll-top="{{scrollTop}}">
+                                          <block wx:for="{{categoryData}}" wx:key="index" wx:for-index="index">
+                                            <view class="categoryBlock" id="{{'J_categoryBlock' + index}}" key="{{index}}">
+                                              <view class="categoryName">{{item.name}}</view>
+                                              <block wx:for="{{item.category}}" wx:key="index" wx:for-index="i_index" wx:for-item="value">
+                                                <view class="productItem" key="{{i_index}}">
+                                                  <view class="productPic" data-index="{{index}}" data-cgindex="{{i_index}}" bindtap="ProductdetailTo">
+                                                    <image src="{{util.config() + 'smallmall/' +value.small_product_img}}" class="productImg"></image>
+                                                  </view>
+                                                  <view class="productProp g_stree6">
+                                                    <view class="prop1" data-index="{{index}}" data-cgindex="{{i_index}}" bindtap="ProductdetailTo">
+                                                      {{value.small_product_name}}
+                                                    </view>
+                                                    <view class="prop2">
+                                                      <span class="priceinfo_wrap">
+                                                        <span class="price">￥{{value.retail_price}}</span>
+                                                        <!-- <span class="cancelPrice">￥{{value.cancelPrice}}</span> -->
+                                                      </span>
+                                                      <block wx:if="{{value.attr_group.length > 0}}">
+                                                        <span class="choice" style="display: {{value.small_count > 0 ? 'block' : 'none'}}">{{value.small_count}}</span>
+                                                        <span class="marketingBtn" data-index="{{index}}" data-cgindex="{{i_index}}" bindtap="marketingBtn">选择</span>
+                                                      </block>
+                                                      <block wx:else>
+                                                        <view class="commonbtnSVG">
+                                                          <span class="iconfont icon-jianhao" style="font-size: 25px;display: {{value.small_count > 0 ? 'initial' : 'none'}}" data-index="{{index}}" data-cgindex="{{i_index}}" data-id="{{value.smallproductid}}" data-type="1" bindtap="reduce"></span>
+                                                          <span class="commonbtnSVG-title" style="display: {{value.small_count > 0 ? 'initial' : 'none'}}">{{value.small_count}}</span>
+                                                          <span class="iconfont icon-jiahao2fill" style="font-size: 25px;" data-index="{{index}}" data-cgindex="{{i_index}}" data-id="{{value.smallproductid}}" data-type="1" bindtap="addto"></span>
+                                                        </view>
+                                                      </block>
+                                                    </view>
+                                                  </view>
+                                                </view>
+                                              </block>
+                                            </view>
+                                          </block>
+                                          <view style="height: 50px;"></view>
+                                        </scroll-view>
+                                      </view>
+                                    </view>
+                                  </view>
+                                </view>
+                              </view>
+                            </view>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<tabbar tabbar="{{tabbar}}"></tabbar>

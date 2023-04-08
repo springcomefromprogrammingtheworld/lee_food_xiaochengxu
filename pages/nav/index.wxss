@@ -1,0 +1,52 @@
+/* 底部菜单样式 */
+.nav {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  border-top: 1px solid #eee;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -ms-flexbox;
+  -ms-flex-direction: row;
+  -ms-flex-pack: justify;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 69;
+}
+.nav .nav-item {
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  display: -ms-inline-flexbox;
+  -ms-flex-direction: column;
+  color: #666;
+}
+.nav .nav-icon-wrap {
+  width: 26px;
+  height: 26px;
+  display: block;
+  margin: 3px auto 0;
+}
+.nav .nav-icon-wrap.not_default {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.nav .nav-text, .nav-2 .nav-text {
+  max-width: 70px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.nav .icon-active,.nav .nav-text-active{
+  color: #1b1b1b;
+}

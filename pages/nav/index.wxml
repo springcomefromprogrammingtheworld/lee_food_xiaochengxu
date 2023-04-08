@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<template name="navItem">
+  <view class="nav">
+    <view class="nav-item" data-url="../index/index" bindtap="JumpTo">
+      <span class="nav-icon-wrap not_default">
+        <span class="iconfont icon-diandan {{menuopen == 1 ? 'icon-active':''}}" style="font-size: 25px;"></span>
+      </span>
+      <span class="nav-text {{menuopen == 1 ? 'nav-text-active':''}}">点单</span>
+    </view>
+    <view class="nav-item" data-url="../order/index" bindtap="JumpTo">
+      <span class="nav-icon-wrap not_default">
+        <span class="iconfont icon-dingdan  {{menuopen == 2 ? 'icon-active':''}}" style="font-size: 25px;"></span>
+      </span>
+      <span class="nav-text {{menuopen == 2 ? 'nav-text-active':''}}">订单</span>
+    </view>
+    <view class="nav-item" data-url="../my/index" bindtap="JumpTo">
+      <span class="nav-icon-wrap not_default">
+        <span class="iconfont icon-wode  {{menuopen == 3 ? 'icon-active':''}}" style="font-size: 25px;"></span>
+      </span>
+      <span class="nav-text {{menuopen == 3 ? 'nav-text-active':''}}">我的</span>
+    </view>
+  </view>  
+</template>
+

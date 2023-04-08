@@ -1,0 +1,94 @@
+/**index.wxss**/
+@import "../../lib/font/iconfont.wxss";
+.wrapper {
+  height: -webkit-calc(100% - 50px);
+  height: calc(100% - 50px);
+  position: relative;
+  background: #f4f4f4;
+  width: 100%;
+  overflow: hidden;
+}
+.jz_scrollbar {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+.jz_scrollbar__wrap {
+  position: relative;
+  height: 100%;
+  overflow: scroll;
+}
+.jz_scrollbar__resize {
+  position: relative;
+}
+.jz_scrollbar__view {
+  position: relative;
+}
+.f_infoBox {
+  background: #fff;
+}
+.f_infoBox .infoItem {
+  height: 51px;
+  border-bottom: 1px solid #e6e6e6;
+  position: relative;
+  margin-left: 17px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 14px;
+}
+.f_infoBox .infoItem .i-name {
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #333;
+}
+.f_infoBox .infoItem .i-name, .f_infoBox .infoItem .i-text {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+.avatar {
+  vertical-align: middle;
+  width: 49px;
+  height: 49px;
+  background: #fcf0e8;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.f_infoBox .infoItem .i-text {
+  display: inline;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.f_infoBox .infoItem .i-text2 {
+  display: inline-block;
+  height: 22px;
+  vertical-align: middle;
+  padding: 0 8px 0 2px;
+  color: #b7b7b7;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.interval-space {
+  height: 10px;
+  background: #f6f6f6;
+}
+.logOutBtn {
+  font-size: 15px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+  line-height: 50px;
+}

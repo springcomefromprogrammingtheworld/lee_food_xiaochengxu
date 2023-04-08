@@ -1,0 +1,58 @@
+
+<!--pages/address/index.wxml-->
+<template name="addressItem">
+  <view class="placeOrder_productCategory" style="padding-bottom: 0px;display: {{openAddress == 1 ? 'block' : 'none'}};">
+    <view class="jz_scrollbar fk_product_category_productContent">
+      <view class="jz_scrollbar__wrap">
+        <view class="jz_scrollbar__resize">
+          <view class="jz_scrollbar__view">
+            <view class="fk_product_category_productContent_wrap" style="padding-top: 0px;">
+              <view class="category">
+                <view class="categoryNames" data-url="../index/index" bindtap="JumpTo">
+                  <span class="iconfont icon-shouye" style="font-size: 25px;"></span>
+                </view>
+                <view class="addressto" bindtap="addressTo">添加</view>
+              </view>
+              <scroll-view scroll-y="true" style="height: 100vh" bindscroll="scroll" scroll-with-animation="true" refresher-enabled="true" enhanced="true">
+                <view class="categoryBlock">
+                  <block wx:for="{{addressData}}" wx:key="index">
+                    <view class="productItem">
+                      <view class="productProp" bindtap="addresschoiceHandle" data-address="{{item.small_address}}" data-contract="{{item.small_contract}}" data-tel="{{item.small_tel}}">
+                        <view class="prop1">
+                          {{item.small_address}}
+                        </view>
+                        <view class="prop2">
+                          <span class="price">{{item.small_contract}}</span>
+                          <span class="quantity">
+                            {{item.small_tel}}
+                          </span>
+                        </view>
+                      </view>
+                      <view class="prop3">
+                        <span class="default" bindtap="setdefaultAddressHandle" data-index="{{index}}" data-id="{{item.small_addressid}}" data-contract="{{item.small_contract}}" data-tel="{{item.small_tel}}" data-address="{{item.small_address}}">
+                          <span class="iconfont {{item.default == 1 ? 'icon-xuanze1' : 'icon-xuanze'}}" style="font-size: 15px;"></span>
+                          <span class="default-title">设默认</span>
+                        </span>
+                        <span class="update" bindtap="updateHandle" data-index="{{index}}" data-id="{{item.small_addressid}}" data-contract="{{item.small_contract}}" data-tel="{{item.small_tel}}" data-address="{{item.small_address}}">
+                          <span class="iconfont icon-xiugai" style="font-size: 15px;"></span>
+                          <span class="update-title">修改</span>
+                        </span>
+                        <span class="delete" bindtap="delAddressHandle" data-index="{{index}}" data-id="{{item.small_addressid}}" data-contract="{{item.small_contract}}" data-tel="{{item.small_tel}}" data-address="{{item.small_address}}">
+                          <span class="iconfont icon-shanchu1" style="font-size: 15px;"></span>
+                          <span class="delete-title">删除</span>
+                        </span>
+                      </view>
+                    </view>
+                    <block wx:if="{{addressData}}">
+                      <view class="orderBr"></view>
+                    </block>
+                  </block>
+                </view>
+              </scroll-view>
+            </view>  
+          </view>
+        </view>
+      </view>
+    </view>  
+  </view>
+</template>

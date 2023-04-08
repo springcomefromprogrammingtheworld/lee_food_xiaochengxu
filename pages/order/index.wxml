@@ -1,0 +1,71 @@
+<wxs src="../../utils/util.wxs" module="util" />
+<!--index.wxml-->
+<view class="placeOrder_productCategory" style="padding-bottom: 0px;">
+  <view class="jz_scrollbar fk_product_category_productContent">
+    <view class="jz_scrollbar__wrap">
+      <view class="jz_scrollbar__resize">
+        <view class="jz_scrollbar__view">
+          <view class="fk_product_category_productContent_wrap cartHeight" style="padding-top: 0px;margin-bottom: 60px;">
+            <scroll-view scroll-y="true" style="height: 100vh" 	bindscrolltolower="obtainOrderHandle" scroll-with-animation="true" refresher-enabled="true" enhanced="true">
+              <block wx:for="{{orderData}}" wx:key="index">
+                <view class="categoryBlock" >
+                  <view class="productCode">{{item.pay_orderno}}</view>
+                  <block wx:for="{{item.suborderdata}}" wx:key="index" wx:for-index="i_index" wx:for-item="value">
+                    <view class="productItem">
+                      <view class="productPic productCart_img">
+                        <image src="{{util.config() + 'smallmall/' + value.small_product_img}}" class="productImg"></image>
+                      </view>
+                      <view class="productProp" style="width: 60%;">
+                        <view class="prop1">
+                          {{value.small_product_name}}
+                          <block wx:if="{{value.attr_object !== ''}}">
+                            <view style="color: #6e6c6c;font-size: 10px;">
+                              <block wx:for="{{value.attr_object}}" wx:key="index" wx:for-index="j_index" wx:for-item="j_value">
+                                <span style="margin-right: 5px;">{{j_value.small_attrvalue}}</span>
+                              </block>
+                            </view>
+                          </block>
+                        </view>
+                        <view class="prop2" style="margin-top: {{value.attr_object !== null ? '10px' : '15px'}};">
+                          <span class="price">￥ {{value.retail_price}}</span>
+                          <span class="quantity">
+                            <span style="margin-right: 5px;">共</span>
+                            <span>{{value.small_count}}</span>
+                            <span style="margin-left: 5px;">件</span>
+                          </span>
+                        </view>
+                      </view>
+                      <view class="paymode">
+                        <block wx:if="{{value.status == 0}}">
+                          <view class="paymode-title">未支付</view>
+                        </block>
+                        <block wx:if="{{value.status == 1}}">
+                          <view class="paymode-title">已完成</view>
+                        </block>
+                        <block wx:if="{{value.status == 2}}">
+                          <view class="paymode-title">支付失败</view>
+                        </block>
+                        <block wx:if="{{value.status == 3}}">
+                          <view class="paymode-title">待退款</view>
+                        </block>
+                        <block wx:if="{{value.status == 4}}">
+                          <view class="paymode-title">已退款</view>
+                        </block>
+                      </view>
+                    </view>
+                  </block>
+                  <view class="total">合计：￥ {{item.total_price}}</view>
+                </view>
+                <block wx:if="{{orderData}}">
+                  <view class="orderBr"></view>
+                </block>
+              </block>
+            </scroll-view>
+          </view>  
+        </view>
+      </view>
+    </view>
+  </view>  
+</view>
+<tabbar tabbar="{{tabbar}}"></tabbar>
+

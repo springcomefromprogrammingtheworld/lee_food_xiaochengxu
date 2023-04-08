@@ -1,0 +1,84 @@
+
+<view class="wrapper">
+  <view class="jz_scrollbar">
+    <view class="jz_scrollbar__wrap"style="height: calc(100% + 6px);">
+      <view class="jz_scrollbar__resize">
+        <view class="jz_scrollbar__view">
+          <view class="f_infoBox">
+            <view>
+              <view>
+                <view class="infoItem" style="height: 67px;">
+                  <view class="i-name">
+                    <span>头像</span>
+                  </view>
+                  <view class="info-wrapper">
+                    <image src="{{module1}}" class="avatar"></image>
+                    <view class="i-text2">
+                      <span class="iconfont icon-dayuhao"></span>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view>
+                <view class="infoItem">
+                  <view class="i-name">
+                    <span>账号</span>
+                  </view>
+                  <view class="info-wrapper">
+                    <view class="i-text" style="color: rgb(215, 215, 215);"> xcx_khm17scja8thix </view>
+                    <view class="i-text2">
+                      <span class="iconfont icon-dayuhao"></span>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view>
+                <view class="infoItem">
+                  <view class="i-name">
+                    <span>姓名</span>
+                  </view>
+                  <view class="info-wrapper">
+                    <view class="i-text" style="color: rgb(51, 51, 51);"> 丘小姐 </view>
+                    <view class="i-text2">
+                      <span class="iconfont icon-dayuhao"></span>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view>
+                <view class="infoItem">
+                  <view class="i-name">
+                    <span>邮箱</span>
+                  </view>
+                  <view class="info-wrapper">
+                    <view class="i-text" style="color: rgb(51, 51, 51);"> 12345@qq.com </view>
+                    <view class="i-text2">
+                      <span class="iconfont icon-dayuhao"></span>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view>
+                <view class="infoItem" style="border-bottom: none;">
+                  <view class="i-name">
+                    <span>手机</span>
+                  </view>
+                  <view class="info-wrapper">
+                    <view class="i-text" style="color: rgb(51, 51, 51);"> 未填写 </view>
+                    <view class="i-text2">
+                      <span class="iconfont icon-dayuhao"></span>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view>
+                <view class="interval-space"></view>
+                <view class="logOutBtn" style="margin-bottom: 17px;"> 退出当前帐号 </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

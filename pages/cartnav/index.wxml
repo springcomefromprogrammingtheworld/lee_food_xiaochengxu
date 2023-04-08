@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<template name="cartnavItem">
+  <view class="productMallShop" style="display: {{detailCartOpen == 1 ? 'flex' : 'none'}};">
+    <view class="mallBtn" bindtap="detailhomeHandle">
+      <span class="iconfont icon-shouye mallBtnIcon" style="font-size: 25px;"></span>
+      <view class="btnText">首页</view>
+    </view>
+    <view class="mallBtn" bindtap="showCartlist">
+      <span class="iconfont icon-gouwuche mallBtnIcon" style="font-size: 25px;"></span>
+      <view class="btnText">购物车</view>
+      <view class="buyTips2">{{Totalquantity}}</view>
+    </view>
+    <view class="g_blockTwo6 mallIndependentBtn btn-right"  data-url="../orderpay/index" bindtap="JumpTo">
+      <span>去结算</span>
+    </view>
+  </view>  
+</template>
+

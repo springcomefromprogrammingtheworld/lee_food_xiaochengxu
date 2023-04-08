@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<template name="choiceItem">
+  <wxs src="../../utils/util.wxs" module="util" />
+  <view class="choice_wap" style="display: {{open == 1 ? 'block' : 'none'}};">
+    <view class="placeOrder_choice_mask"></view>
+    <view class="placeOrder_choice_content">
+      <view class="fk_product_category_productContent_wrap">
+        <view class="categoryBlock">
+          <view class="productItem">
+            <span class="iconfont icon-shanchu commonbtnSVG" bindtap="closeattribute"></span>
+            <view class="productPic">
+              <image src="{{util.config() + 'smallmall/' +choicedata.small_product_img}}" class="productImg"></image>
+            </view>
+            <view class="productProp g_stree6">
+              <view class="prop1">
+                {{choicedata.small_product_name}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="jz_scrollbar">
+        <view class="jz_scrollbar__wrap" style="margin-right: -6px; margin-bottom: -6px; height: calc(100% + 6px);">
+          <view class="jz_scrollbar__resize">
+            <view class="jz_scrollbar__view" style="margin: 0px;padding: 0px;">
+              <scroll-view scroll-y="true" style="max-height: 50vh;" scroll-with-animation="true" refresher-enabled="true" enhanced="true" scroll-into-view="choiceview" scroll-top="0">
+                <view style="margin-bottom: 30%;" class="cartHeight" id="choiceview">
+                  <block wx:for="{{choicedata.attr_group}}" wx:key="index" wx:for-index="index">
+                    <view class="categoryBlock">
+                      <view class="categoryName">{{item.name}}</view>
+                      <view class="product_category_Item">
+                        <block wx:for="{{item.attr}}" wx:key="index" wx:for-index="i_index" wx:for-item="value">
+                          <view class="category {{util.defineIndexOf(attribute , value.small_attrvalue) !== -1 ? 'category-active' : ''}}" data-index="{{index}}" data-name="{{item.name}}" data-value="{{value.small_attrvalue}}" data-attrid="{{value.attrid}}" bindtap="AddtoAttribute">{{value.small_attrvalue}}</view>
+                        </block>
+                      </view>
+                    </view>
+                  </block>
+                </view>
+              </scroll-view>
+            </view>
+          </view>
+        </view>
+        <view class="cartcommonbtn">
+          <view class="cartbtn" data-choiceindex="{{choiceindex}}" data-choicedata="{{choicedata}}" bindtap="Addcart">加入购物车</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+

@@ -1,0 +1,57 @@
+<!--pages/address/index.wxml-->
+<template name="selectItem">
+  <view style="display: {{cityproper == 1 ? 'block' : 'none'}};">
+    <view class="mask-black"></view>
+    <view class="m-cityselect brouce-in">
+      <view class="cityselect-header">
+        <view class="cityselect-title">所在地区</view>
+        <view class="cityselect-nav">
+          <view class="crt {{provincenav == 1 ? 'crt-activces' : ''}}" data-index="1" bindtap="cityselectnav">{{province != '' ? province : '请选择'}}</view>
+          <view class="crt {{citynav == 1 ? 'crt-activces' : ''}}" data-index="2" bindtap="cityselectnav">{{city != '' ? city : province != '' ? '请选择' : ''}}</view>
+          <view class="crt {{areanav == 1 ? 'crt-activces' : ''}}" data-index="3" bindtap="cityselectnav">{{area != '' ? area : city != '' ? '请选择' : ''}}</view>
+        </view>
+      </view>
+      <view class="cityselect-content {{cityselectnext == 1 ? ' cityselect-move-animate cityselect-next' : cityselectprev == 1 ? ' cityselect-move-animate cityselect-prev':''}}">
+        <!-- 省 -->
+        <view class="cityselect-item">
+          <block wx:for="{{provinces}}" wx:key="index">
+            <view class="cityselect-item-box" data-index="{{index}}" data-name="{{item.name}}" data-sub="{{item.sub}}" bindtap="choiceprovince">
+              <view class="crt {{item.name == province ? 'crt-activces' :''}}">
+                <span>{{item.name}}</span>
+                <block wx:if="{{item.name == province}}">
+                  <span class="iconfont icon-duihao crtafter"></span>
+                </block>
+              </view>
+            </view>
+          </block>
+        </view>
+        <!-- 市 -->
+        <view class="cityselect-item">
+          <block wx:for="{{citys}}" wx:key="index">
+            <view class="cityselect-item-box" data-index="{{index}}" data-name="{{item.name}}" data-sub="{{item.sub}}" bindtap="choicecity">
+              <view class="crt {{item.name == city ? 'crt-activces' :''}}">
+                <span>{{item.name}}</span>
+                <block wx:if="{{item.name == city}}">
+                  <span class="iconfont icon-duihao crtafter"></span>
+                </block>
+              </view>
+            </view>
+          </block>
+        </view>
+        <!-- 区 -->
+        <view class="cityselect-item">
+          <block wx:for="{{countys}}" wx:key="index">
+            <view class="cityselect-item-box" data-index="{{index}}" data-name="{{item.name}}" bindtap="choicearea">
+              <view class="crt {{item.name == county ? 'crt-activces' :''}}">
+                <span>{{item.name}}</span>
+                <block wx:if="{{item.name == county}}">
+                  <span class="iconfont icon-duihao crtafter"></span>
+                </block>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
